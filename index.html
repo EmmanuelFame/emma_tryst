@@ -13,11 +13,151 @@
 
 </head>
 <body>
+    <!-- <style>
+     
     
+        .gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 16px;
+          justify-content: center;
+          padding: 16px;
+          background-color: #f9fafb;
+        }
+    
+        .gallery-item {
+          flex: 1 1 calc(200px + 16px);
+          max-width: 200px;
+          overflow: hidden;
+          text-align: center;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .gallery-item img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+
+    
+        @media (max-width: 600px) {
+          .gallery-item {
+            flex: 1 1 calc(100% - 16px);
+            max-width: 100%;
+          }
+        }
+      </style> -->
+    
+      <style>
+        .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.gallery-item p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.gallery-item button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gallery-item button:hover {
+  background-color: #0056b3;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+      </style>
 
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/images/tryst-high-resolution-logo.png" class="h-8" alt="Flowbite Logo" />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Emma💝Tryst</span>
       </a>
@@ -32,38 +172,134 @@
           <li>
             <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
           </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-          </li>
+         
+          
+        
         </ul>
       </div>
     </div>
   </nav>
 
 
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="./images/food1.png" alt="Dodster">
+      <p>1. Dodster</p>
+      <button onclick="selectOption('1 Dodster')">Select</button>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/food2.png" alt="Pizza">
+      <p>2. Pizza</p>
+      <button onclick="selectOption('2 Pizza')">Select</button>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/food3.jpg" alt="Bucket">
+      <p>3. Bucket</p>
+      <button onclick="selectOption('3 Bucket')">Select</button>
+    </div>
+    <div class="gallery-item">
+        <img src="./images/fries.jpg" alt="fries">
+        <p>4. fries</p>
+        <button onclick="selectOption('4. fries')">Select</button>
+      </div>
+      <div class="gallery-item">
+        <img src="./images/plov.jpg" alt="plov">
+        <p>5. plov</p>
+        <button onclick="selectOption('5. plov')">Select</button>
+      </div>
+      <div class="gallery-item">
+        <img src="./images/sushi.jpg" alt="sushi">
+        <p>6. Sushi</p>
+        <button onclick="selectOption('6. Sushi')">Select</button>
+      </div>
+      <div class="gallery-item">
+        <img src="./images/wok.jpg" alt="wok">
+        <p>7. wok</p>
+        <button onclick="selectOption('7. wok')">Select</button>
+      </div>
+      <div class="gallery-item">
+        <img src="./images/smiley.jpeg" alt="cook me something">
+        <p>8. cook me something😉</p>
+        <button onclick="selectOption('cook me something😉')">Select</button>
+      </div>
+      
+   
+  </div>
+  
+  <form class="max-w-md mx-auto p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800">
+    <h2 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">Hangout Food Menu</h2>
+    
+    <div class="mb-5">
+      <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
+      <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="e.g., Ayo" required>
+    </div>
+  
+    <div class="mb-5">
+      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Email</label>
+      <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="e.g., ayo@example.com" required>
+    </div>
+  
+    <div class="mb-5">
+      <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Preferred Date</label>
+      <input type="date" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
+    </div>
+  
+    <div class="mb-5">
+      <label for="food-choice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Food Choice</label>
+      <textarea id="food-choice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Click 'Select' buttons from the menu above to add your choices here!" readonly required></textarea>
+    </div>
+  
+    <div class="mb-5">
+      <label for="extras" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Any Silly Requests or Extra Details?</label>
+      <textarea id="extras" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="e.g., I want to be fed!"></textarea>
+    </div>
+  
+    <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+      Submit Your Food Picks 🍽️
+    </button>
+  </form>
+  
+  
   
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    <div>
-        <img class=" h-64 w-64 rounded-lg" src="./images/food1.png" alt="">
+  <!-- <div class="gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="gallery-item">
+      <img src="./images/food1.png" loading="lazy" alt="Food 1">
+      <p>1 dodster</p>
     </div>
-    <div>
-        <img class=" h-64 w-64  rounded-lg" src="./images/food2.png" alt="">
+    <div class="gallery-item">
+      <img src="./images/food2.png" loading="lazy" alt="Food 2">
+      <p>2 pizza</p>
     </div>
-    <div>
-        <img class="h-64 w-64  rounded-lg" src="./images/food3.jpg" alt="">
+    <div class="gallery-item">
+      <img src="./images/food3.jpg" loading="lazy" alt="Food 3">
+      <p>3 bucket</p>
     </div>
-    
-</div>
+    <div class="gallery-item">
+      <img src="./images/sushi.jpg" loading="lazy" alt="Food 1">
+      <p>4 sushi</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/sush2.jpg" loading="lazy" alt="Food 2">
+      <p>5 sushi</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/smiley.jpeg" loading="lazy" alt="Food 3">
+      <p>6 cook me something</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/wok.jpg" loading="lazy" alt="Food 2">
+      <p>7 wok</p>
+    </div>
+    <div class="gallery-item">
+      <img src="./images/plov.jpg" loading="lazy" alt="Food 3">
+      <p>8 plov</p>
+    </div>
+    <div class="gallery-item">
+        <img src="./images/plov.jpg" loading="lazy" alt="Food 3">
+        <p>8 plov</p>
+      </div>
+  </div>
 
 
 
@@ -84,82 +320,10 @@
       <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
     </div>
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-  </form>
+  </form> -->
 
   
-<section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Frequently asked questions</h2>
-        <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
-            <div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        What do you mean by "Figma assets"?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">You will have access to download the full Figma project including all of the pages, the components, responsive pages, and also the icons, illustrations, and images included in the screens.</p>
-                </div>
-                <div class="mb-10">                        
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        What does "lifetime access" exactly mean?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">Once you have purchased either the design, code, or both packages, you will have access to all of the future updates based on the roadmap, free of charge.</p>
-                </div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        How does support work?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">We're aware of the importance of well qualified support, that is why we decided that support will only be provided by the authors that actually worked on this project.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Feel free to <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline" target="_blank" rel="noreferrer">contact us</a> and we'll help you out as soon as we can.</p>
-                </div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        I want to build more than one project. Is that allowed?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">You can use Windster for an unlimited amount of projects, whether it's a personal website, a SaaS app, or a website for a client. As long as you don't build a product that will directly compete with Windster either as a UI kit, theme, or template, it's fine.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Find out more information by <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">reading the license</a>.</p>
-                </div>
-            </div>
-            <div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        What does "free updates" include?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">The free updates that will be provided is based on the <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">roadmap</a> that we have laid out for this project. It is also possible that we will provide extra updates outside of the roadmap as well.</p>
-                </div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        What does the free version include?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">The <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">free version</a> of Windster includes a minimal style guidelines, component variants, and a dashboard page with the mobile version alongside it.</p>
-                    <p class="text-gray-500 dark:text-gray-400">You can use this version for any purposes, because it is open-source under the MIT license.</p>
-                </div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        What is the difference between Windster and Tailwind UI?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">Although both Windster and Tailwind UI are built for integration with Tailwind CSS, the main difference is in the design, the pages, the extra components and UI elements that Windster includes.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Additionally, Windster is a project that is still in development, and later it will include both the application, marketing, and e-commerce UI interfaces.</p>
-                </div>
-                <div class="mb-10">
-                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
-                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
-                        Can I use Windster in open-source projects?
-                    </h3>
-                    <p class="text-gray-500 dark:text-gray-400">Generally, it is accepted to use Windster in open-source projects, as long as it is not a UI library, a theme, a template, a page-builder that would be considered as an alternative to Windster itself.</p>
-                    <p class="text-gray-500 dark:text-gray-400">With that being said, feel free to use this design kit for your open-source projects.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Find out more information by <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">reading the license</a>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
+
 
   
 
@@ -170,25 +334,26 @@
 
 <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">EmmanuelFame™</a>. All Rights Reserved.
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
         <li>
-            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            <a href="#" class="hover:underline me-4 md:me-6">Welcome Miss Blessing.</a>
         </li>
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contact</a>
-        </li>
+       
+       
+       
     </ul>
     </div>
 </footer>
 
+<script>
+    function selectOption(foodItem) {
+      const foodChoiceField = document.getElementById("food-choice");
+      const currentChoices = foodChoiceField.value.trim();
+      foodChoiceField.value = currentChoices ? `${currentChoices}, ${foodItem}` : foodItem;
+    }
+  </script>
     
     <script src="./js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>

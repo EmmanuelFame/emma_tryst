@@ -3,6 +3,14 @@
      margin-bottom: 0px;
  }
  
+.food{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
 
 
 
